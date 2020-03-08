@@ -1,6 +1,5 @@
 body {
     margin: 60px auto;
-    width: 70%;
     max-width: 1000px;
 }
 ul {
@@ -20,7 +19,7 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     text-align: center;
 }
@@ -37,7 +36,7 @@ author {
     font-size: 1.0em;
 }
 links {
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: bold;
 }
 ul.posts { 
