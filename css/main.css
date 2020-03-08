@@ -12,6 +12,11 @@ ul li{
     display: inline;
     margin-right: 20px;
 }
+ol {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 20px;
+    display: block;
+}
 a {
     text-decoration: none;
     color: rgb(47, 84, 163);
@@ -23,6 +28,10 @@ h1 {
     font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     text-align: center;
+}
+h2 {
+    font-size: 1.2em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
     font-size: 1.2em;

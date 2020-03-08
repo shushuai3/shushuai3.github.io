@@ -26,7 +26,27 @@
 				<li><a>Code-experiment(release soon)</a></li>
 			</ul>
 		</links>
-		<p>My homepage is still <em>being built</em> Please go to the project page.</p>
+		
+		<p>This work proposes an autonomous 3D multi-robot system without external GPS or motion capture systems.
+			The relative position and bearing between any two flying robots are estimated by onboard EKF, 
+			which takes as input sensory information (velocity, yaw rate, height, and ranging).
+			With the estimated relative states, experiments are conducted on 5 Crazyflie,
+			including formation flight, and leader-follower coordination while the leader has a monocular camera to detect and fly towards the target.
+		</p>
+
+		<h2>Real-world flights</h2>
+		<ul>
+			<img src="formation.gif" alt="Formation flight">
+			<img src="leadFollow.gif" alt="leader-follower flight">
+		</ul>
+		<ol style="list-style-type:circle;">
+			<li>The first figure: a formation flight of 5 micro flying robots based on the relative localization.</li>
+			<li>The second figure: a leader-follower flight flying through a window autonomously.</li>
+		</ol>
+
+		<h2>
+			Contribution & system features
+		</h2>
 		<footer>
     		<ul>
         		<li><a href="mailto:lss8513@gmail.com">Email</a></li>
