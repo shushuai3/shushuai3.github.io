@@ -1,6 +1,7 @@
 body {
     margin: 60px auto;
     max-width: 1000px;
+    width: 90%;
 }
 ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
