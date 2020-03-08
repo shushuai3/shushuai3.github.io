@@ -13,9 +13,9 @@ ul li{
     margin-right: 20px;
 }
 ol {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 20px;
     display: block;
+    font-size: 1.2em;
+    color: #333;
 }
 a {
     text-decoration: none;

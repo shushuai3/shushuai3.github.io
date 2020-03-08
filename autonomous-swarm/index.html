@@ -29,7 +29,7 @@
 		
 		<p>This work proposes an autonomous 3D multi-robot system without external GPS or motion capture systems.
 			The relative position and bearing between any two flying robots are estimated by onboard EKF, 
-			which takes as input sensory information (velocity, yaw rate, height, and ranging).
+			which takes as input sensory information (velocity, yaw rate, height, and ranging from Ultra wide-band sensor).
 			With the estimated relative states, experiments are conducted on 5 Crazyflie,
 			including formation flight, and leader-follower coordination while the leader has a monocular camera to detect and fly towards the target.
 		</p>
@@ -41,12 +41,23 @@
 		</ul>
 		<ol style="list-style-type:circle;">
 			<li>The first figure: a formation flight of 5 micro flying robots based on the relative localization.</li>
-			<li>The second figure: a leader-follower flight flying through a window autonomously.</li>
+			<li>The second figure: a leader-follower flight through a window autonomously, where the follower coordinates based on the relative information.</li>
 		</ol>
-
+		<p>The <a>experiment code</a> is based on Crazyflie autopilot software, and has following developed features.</p>
+		<ol style="list-style-type:circle;">
+			<li>Two-way-ranging between any two flying robots.</li>
+			<li>Relative localization using EKF.</li>
+			<li>Formation control, and leader-follower control.</li>
+		</ol>
+		<p>In the leader-follower test, the first Crazyflie is equipped with a monocular camera for autonomous flight.</p>
+		<ul><img src="monocular.gif" alt="monocular camera on Crazyflie"></ul>
+		
 		<h2>
-			Contribution & system features
+			Simulation
 		</h2>
+
+		<p>Simulation code is built with Python, in which any number of robots can be simulated to validate the proposed relative localization method.</p>
+		<ul><img src="simulation.gif" alt="simulation"></ul>
 		<footer>
     		<ul>
         		<li><a href="mailto:lss8513@gmail.com">Email</a></li>
