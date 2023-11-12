@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<title>Shushuai Li - Homepage</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Research Template">
+	<meta name="author" content="Shushuai Li">
+	<link rel="shortcut icon" href="favicon.ico">
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+</head> 
+
+<body>
+    
+    <header class="header text-center">
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Shushuai Li</a></h1>
+		<nav class="navbar navbar-expand-lg navbar-dark" >
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >
+
+					<div class="bio mb-2">PhD at Micro Air Vehicle Lab</div>
+					<div class="bio mb-2">Delft University of Technology</div>
+					<div class="bio mb-2">s.li-6@tudelft.nl</div>
+
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul>
+			        <hr> 
+				</div>
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Homepage<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="swarm.html"><i class="fas fa-book fa-fw mr-2"></i>Autonomous swarm</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">An Autonomous Swarm of Micro Flying Robots with Range-based Relative Localization</h2>
+				    <div class="meta mb-3"><span class="date">Shushuai Li</span><span class="time">Mario Coppola</span><span class="comment">Christophe De Wagter</span><span class="comment">Guido de Croon</span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <img class="img-fluid" src="assets/images/blog/swarm-formation.gif" alt="image">
+				        <figcaption class="mt-2 text-center image-caption">Formation and leader-follower control of multiple robots with fully onboard perception</figcaption>
+				    </figure>
+				    <p>Accurate relative localization is important for a swarm of robots, especially when performing a cooperative task.	This paper presents an autonomous multi-robot relative positioning technique. An Extended Kalman filter (EKF) uses onboard sensing of velocity, yaw rate, and height as inputs, and then estimates the relative position of other robots by fusing these quantities with ranging measurements obtained from onboard ultra wide-band (UWB). Real-world experiments are conducted on a team of 5 Crazyflie2 quadrotors, demonstrating autonomous formation flight and coordinated flight through a window. </p>
+				    
+				    <h3 class="mt-5 mb-3">Innovations</h3>
+				    <!-- <h5 class="my-3">Specific Points:</h5> -->
+				    <ul class="mb-5">
+					  <li class="mb-2">An autonomous relative localization implemented on multiple nano (33 grams) flying robots with fully onboard perception.</li>
+					  <li class="mb-2">Localization convergence analysis for both random initialization maneuvers and unobservable maneuvers.</li>
+					  <li class="mb-2">Robust and fast communication (333Hz for each ranging) that allow for a high-speed estimation update.</li>
+					  <li class="mb-2">Automatic initialization procedure for dealing with large unknown initial state errors.</li>
+					</ul>
+
+					<h3 class="mt-5 mb-3">Swarm demo with off-the-shelf Crazyflie </h3>
+					<ol class="mb-5">
+					  <li class="mb-2">Set the address of each crazyflie ending by E5, E6, E7, ... .</li>
+					  <li class="mb-2">Download <a href="https://github.com/shushuai3/cf_onboard_swarm/tree/swarm">source code</a> and checkout the swarm branch.</li>
+					  <li class="mb-2">Set the NumUWB in lpsTwrTag.h to the actual number of Crazyflies.</li>
+					  <li class="mb-2">In cfclient, connect to 'E5' crazyflie, and set keep_flying to 1.</li>
+					</ol>
+					
+				    <h3 class="mt-5 mb-3">Video demo</h3>
+				    <p>The summary video is shown below. For the full video list, click <a href="https://www.youtube.com/playlist?list=PL_KSX9GOn2P9sgaX3DHnPsnBCJ76fLNJ5">here</a>. </p>
+				    <div class="embed-responsive embed-responsive-16by9">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/4OnB7uES20k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+
+					<h3 class="mt-5 mb-3">Visual control on the Leader</h3>
+				    <p>In the leader-follower test, the leader Crazyflie is equipped with a monocular camera for autonomous target detection and tracking. </p>
+					<figure class="blog-banner">
+				        <img class="img-fluid" src="assets/images/blog/swarm-leader.gif" alt="image">
+				        <figcaption class="mt-2 text-center image-caption">Visual detection and control for leader-follower experiments</figcaption>
+				    </figure>
+
+					<h3 class="mt-5 mb-3">Simulation with Python</h3>
+				    <p>In case you don't have Crazyflie robots, you can still validate the proposed relative localization method in a python-based simulation framework. The kinematic model is same to the real-world robots.</p>
+					<figure class="blog-banner">
+				        <img class="img-fluid" src="assets/images/blog/swarm-sim.gif" alt="image">
+				        <figcaption class="mt-2 text-center image-caption">Simulation</figcaption>
+				    </figure>
+
+			    </div>
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Based on <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a></small>
+	    </footer>
+    </div>
+
+	<!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+
+</body>
+</html> 
+
