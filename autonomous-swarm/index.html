@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>An Autonomous Swarm of Micro Flying Robots with Range-based Relative Localization</title>
+		<title>Onboard UWB-based Wireless Relative Localization and Stability for Lightweight Aerial Swarms
+		</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="icon" type="image/png" href="css/favicon.ico">
 	</head>
 	<body>
-		<h1>An Autonomous Swarm of Micro Flying Robots with Range-based Relative Localization</h1>
+		<h1>Onboard UWB-based Wireless Relative Localization and Stability for Lightweight Aerial Swarms</h1>
 		<author>
 			<ul>
-				<li>Shushuai Li</li>
-				<li>Mario Coppola</li>
-				<li>Christophe De Wagter</li>
-				<li>Guido C. H. E. de Croon</li>
+				<li>Shushuai Li<sup>1</sup></li>
+				<li>Feng Shan<sup>2</sup></li>
+				<li>Jiangpeng Liu<sup>2</sup></li>
+				<li>Mario Coppola<sup>1</sup></li>
+				<li>Christophe De Wagter<sup>1</sup></li>
+				<li>Guido C. H. E. de Croon<sup>1</sup></li>
 			</ul>
 			<ul>
-				<li>Micro Air Vehicle Laboratory</a></li>
-				<li>Delft University of Technology</li>
+				<li><sup>1</sup> Micro Air Vehicle (MAV) Laboratory, Delft University of Technology</li>
+			</ul>
+			<ul>
+				<li><sup>2</sup> Networking and Swarm Intelligence (NetSI) Research Group, Southeast University</li>
 			</ul>
 		</author>
 		<links>
@@ -27,25 +32,24 @@
 			</ul>
 		</links>
 		
-		<p>This work proposes an autonomous 3D multi-robot system without external GPS or motion capture systems.
-			The relative position and bearing between any two flying robots are estimated by an onboard EKF, 
-			in which the inputs come from sensory information (velocity, yaw rate, height, and ranging from Ultra wide-band sensor).
-			Experiments are conducted on 5 Crazyflie quadrotors, including formation flights, and leader-follower flights through a window.
+		<p>
+			For an environment without external GPS or motion capture systems, this work presents an autonomous multi-robot relative localization technique by fusing ultra-wideband (UWB) wireless distance measurements and state information (e.g., velocity, yaw rate, height) obtained onboard and from peers. 
+			We first propose a many-to-many UWB protocol to efficiently compute distances to neighbors, and then design a novel EKF-based relative estimator that exhibits stable convergence even with noisy filter inputs. We further introduce an automatic initialization procedure to accelerate the localization convergence, and present estimation stability analysis. Experiments show the proposed UWB protocol is efficient to compute the distance to neighbors and promising to scale to large swarms; while simulation shows the high precision, efficiency, and stability of the proposed localization method. We implement the proposed ranging and localization technique on tiny lightweight and resource constrained Crazyflie drones, and conduct extensive real-world experiments. This is the first time a team of up to 13 lightweight (33 gram) and resource constrained (192 KB memory) drones perform fully autonomous, onboard relative localization in an indoor environment. 
 		</p>
 
 		<h2>Real-world flights</h2>
 		<ul>
 			<img src="formation.gif" alt="Formation flight">
-			<img src="leadFollow.gif" alt="leader-follower flight">
-			<p>Left: formation flight; Right: leader-follower flight</p>
+			<img src="13_formation.gif" alt="13 formation flight" width="400" height="250">
+			<p>Left: 5 drones formation flight; Right: 13 drones formation flight</p>
 		</ul>
 
 		<h2>Innovations</h2>
 		<ol style="list-style-type:circle;">
-			<li>An autonomous relative localization implemented on multiple nano (33 grams) flying robots with fully onboard perception.</li>
-			<li>Localization convergence analysis for both random initialization maneuvers and unobservable maneuvers.</li>
-			<li>Robust and fast communication rules that allow for a high-speed estimation update.</li>
-			<li>Automatic initialization procedure for dealing with large unknown initial state errors.</li>
+			<li>An autonomous relative localization technique is implemented on multiple lightweight (33 grams) and resource constrained (192 KB memory) aerial robots.</li>
+			<li>The proposed ranging protocol can enable large-scale swarms to perform fast and stable communication and ranging.</li>
+			<li>It is showed that state drift and sensory noise leads to control actions that make the state observable again, and this self-regulated estimation convergence is validated by simulation and real-world experiments.</li>
+			<li> The source code is publicly released to the community and ready to run on off-the-shelf Crazyflie quadrotors.</li>
 		</ol>
 
 		<h2>Getting started with Crazyflie quadrotors off-the-shelf</h2>
